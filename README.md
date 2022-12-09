@@ -21,7 +21,32 @@ npm start
 
 - 通过插件craco，-- create-react-app config，根目录下新建craco.config.js文件配置
 
-```js
-npm i -D @craco/craco
+  ```js
+  npm i -D @craco/craco
+  ```
+  - 根目录下`craco.config.js`创建文件，文件内容如下：
 
-```
+  ```js
+  const path = require('path')
+
+  // __dirname：当前目录，当前目录拼接上dir
+  const resolve = (dir) => path.resolve(__dirname, dir)
+
+  module.exports = {
+    webpack: {
+      alias: {
+        '@': resolve('src'),
+      },
+    },
+  }
+  ```
+- 配置完成后，packing 中的启动脚本更改为如下内容：
+
+  ```js
+    "scripts": {
+      "start": "craco start",
+      "build": "craco build",
+      "test": "craco test",
+      "eject": "react-scripts eject"
+    },
+  ```
