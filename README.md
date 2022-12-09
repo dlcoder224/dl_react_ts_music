@@ -50,3 +50,5 @@ npm start
       "eject": "react-scripts eject"
     },
   ```
+## 配置文件说明
+.editorconfig：同一项目的多个开发人员维护一致的编码风格；
