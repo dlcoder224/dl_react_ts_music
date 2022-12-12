@@ -17,7 +17,7 @@ npm start
 
 # react 修改配置俩种方式
 
-- 通过eject暴露出来配置，默认隐藏配置
+- 通过eject暴露出来配置，默认隐藏配置，不推荐
 
 - 通过插件craco，-- create-react-app config，根目录下新建craco.config.js文件配置
 
@@ -57,4 +57,12 @@ npm start
 npm install prettier -D
 ```
 根目录新建 `.prettierrc` 文件，格式化规则，新建 `.prettierignore` ，配置格式化忽略文件，package 新增全局格式化命令
-3、
+3、使用eslint约束代码
+
+```js
+npm install eslint -D
+```
+使用以下命令初始化eslint
+```js
+npx eslint --init
+```
