@@ -66,3 +66,8 @@ npm install eslint -D
 ```js
 npx eslint --init
 ```
+
+```js
+// eslint 补充安装，vue 默认安装
+npm i eslint-plugin-prettier eslint-config-prettier -D
+```
