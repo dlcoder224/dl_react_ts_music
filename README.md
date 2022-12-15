@@ -1,7 +1,7 @@
-# react18_ts_music
+## react18_ts_music
 react18 + ts 仿网易云项目
 
-# 项目初始化
+## 项目初始化
 
 npx create-react-app react18_ts_music
 cd react18_ts_music
@@ -15,7 +15,7 @@ npm start
 
 - 配置tsconfig,json
 
-# react 修改配置俩种方式
+## react 修改配置俩种方式
 
 - 通过eject暴露出来配置，默认隐藏配置，不推荐
 
@@ -70,4 +70,13 @@ npx eslint --init
 ```js
 // eslint 补充安装，vue 默认安装
 npm i eslint-plugin-prettier eslint-config-prettier -D
+```
+## 目录文件划分
+- 初始化css
+```js
+npm install normailze.css
+```
+## 安装less
+```js
+npm install craco-less@2.1.0-alpha.0
 ```
