@@ -95,3 +95,6 @@ npm install craco-less@2.1.0-alpha.0
 ```js
 npm install react-router-dom
 ```
+
+修改文件涉及，入口文件 index.tsx, App.tsx, route.tsx 路由文件
+
