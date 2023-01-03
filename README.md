@@ -90,6 +90,30 @@ npm install normailze.css
 npm install craco-less@2.1.0-alpha.0
 ```
 
+craco.config.js 文件配置
+
+```js
+const path = require('path')
+const CracoLessPlusgin = require('craco-less')
+
+// __dirname：当前目录，当前目录拼接上dir
+const resolve = (dir) => path.resolve(__dirname, dir)
+
+module.exports = {
+  plugins: [
+    {
+      plugin: CracoLessPlusgin
+    }
+  ],
+  webpack: {
+    alias: {
+      '@': resolve('src')
+    }
+  }
+}
+
+```
+
 ## 安装路由
 
 ```js
