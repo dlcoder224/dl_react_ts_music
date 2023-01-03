@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { memo } from 'react'
+import type { FC, ReactNode } from 'react'
 
-const Mine = () => {
-  return <div>Mine</div>
+interface IProps {
+  children?: ReactNode
 }
 
-export default Mine
+const Mine: FC<IProps> = () => {
+  return <div> Mine</div>
+}
+
+export default memo(Mine)
