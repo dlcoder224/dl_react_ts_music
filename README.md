@@ -122,3 +122,12 @@ npm install react-router-dom
 
 修改文件涉及，入口文件 index.tsx, App.tsx, route.tsx 路由文件
 
+## 集成状态管理
+第一种：redux
+
+第二种工具：@reduxjs/toolkit：redux 工具，更方便的使用 redux
+
+```js
+npm install @reduxjs/toolkit react-redux
+```
+react-redux 是把 react 和 redux 连接起来
