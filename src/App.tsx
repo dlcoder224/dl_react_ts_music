@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react'
 import { Link, useRoutes } from 'react-router-dom'
-import { shallowEqual } from 'react-redux'
 
-import { useAppSelector } from './store'
+import { useAppSelector, useAppDispatch, useAppShallowEqual } from './store'
+import { changeCountAction } from './store/modules/counter'
 
 import routes from './router'
 
@@ -11,7 +11,13 @@ function App() {
     return {
       count: state.counter.count
     }
-  }, shallowEqual)
+  }, useAppShallowEqual)
+
+  const dispath = useAppDispatch()
+  const changeMessageFn = () => {
+    console.log('redux-change')
+    dispath(changeCountAction(123))
+  }
 
   return (
     <div className="App">
@@ -22,6 +28,7 @@ function App() {
         <Link to="/discover">发现音乐</Link>
       </div>
       <h2>计数：{count}</h2>
+      <button onClick={changeMessageFn}>修改Message</button>
       <Suspense fallback="loading...">
         <div className="main">{useRoutes(routes)}</div>
       </Suspense>

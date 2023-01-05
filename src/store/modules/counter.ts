@@ -5,7 +5,12 @@ const counterSlice = createSlice({
   initialState: {
     count: 100
   },
-  reducers: {}
+  reducers: {
+    changeCountAction(state, { payload }) {
+      state.count = payload
+    }
+  }
 })
 
+export const { changeCountAction } = counterSlice.actions
 export default counterSlice.reducer
