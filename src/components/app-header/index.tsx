@@ -10,20 +10,30 @@ interface IProps {
 }
 
 const AppHeader: FC<IProps> = () => {
+  function showItem(item: any) {
+    if (item.type === 'path') {
+      return <Link to={item.link}> {item.title}</Link>
+    } else {
+      return <a href={item.link}>{item.title}</a>
+    }
+  }
+
   return (
     <HeaderWrapper>
       <div className="content warp-v1">
         <HeaderLeft>
-          <a href="/#" className="logo sprite_01">
-            网易云音乐
-          </a>
+          <a href="/#" className="logo sprite_01"></a>
           <div className="title-list">
-            {/* {hederTitles.map((title, index) => (
-              return
-            ))} */}
+            {hederTitles.map((item) => {
+              return (
+                <div className="item" key={item.title}>
+                  {showItem(item)}
+                </div>
+              )
+            })}
           </div>
         </HeaderLeft>
-        <HeaderRight></HeaderRight>
+        <HeaderRight>123132</HeaderRight>
       </div>
     </HeaderWrapper>
   )
