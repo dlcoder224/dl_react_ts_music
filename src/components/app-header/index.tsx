@@ -1,6 +1,8 @@
 import React, { memo } from 'react'
 import type { FC, ReactNode } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { Input } from 'antd'
+import { SearchOutlined } from '@ant-design/icons'
 
 import { HeaderLeft, HeaderRight, HeaderWrapper } from './style'
 import hederTitles from '@/assets/data/header-titles.json'
@@ -12,7 +14,12 @@ interface IProps {
 const AppHeader: FC<IProps> = () => {
   function showItem(item: any) {
     if (item.type === 'path') {
-      return <Link to={item.link}> {item.title}</Link>
+      return (
+        <NavLink to={item.link}>
+          {item.title}
+          <i className="icon sprite_01"></i>
+        </NavLink>
+      )
     } else {
       return <a href={item.link}>{item.title}</a>
     }
@@ -33,8 +40,17 @@ const AppHeader: FC<IProps> = () => {
             })}
           </div>
         </HeaderLeft>
-        <HeaderRight>123132</HeaderRight>
+        <HeaderRight>
+          <Input
+            className="search"
+            placeholder="音乐/视频/播客"
+            prefix={<SearchOutlined />}
+          />
+          <span className="center">创作者中心</span>
+          <span className="login">登录</span>
+        </HeaderRight>
       </div>
+      <div className="divider"></div>
     </HeaderWrapper>
   )
 }
